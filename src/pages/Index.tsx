@@ -59,6 +59,8 @@ const reasons = [
 export default function Index() {
   const [formData, setFormData] = useState({ name: "", phone: "", service: "", comment: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -78,9 +80,26 @@ export default function Index() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setSendError("");
+    try {
+      const res = await fetch("https://functions.poehali.dev/cb82fe3d-da02-4976-b8d7-71a3171cf6d2", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setSendError("Не удалось отправить заявку. Позвоните нам напрямую.");
+      }
+    } catch {
+      setSendError("Ошибка соединения. Позвоните нам напрямую.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const scrollTo = (id: string) => {
@@ -358,10 +377,14 @@ export default function Index() {
                   />
                 </div>
 
-                <button type="submit" className="neon-btn w-full py-4 rounded-xl text-base font-bold tracking-widest uppercase flex items-center justify-center gap-3">
-                  <Icon name="Send" size={18} />
-                  Записаться на бесплатную консультацию
+                <button type="submit" disabled={sending} className="neon-btn w-full py-4 rounded-xl text-base font-bold tracking-widest uppercase flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
+                  <Icon name={sending ? "Loader" : "Send"} size={18} className={sending ? "animate-spin" : ""} />
+                  {sending ? "Отправляем..." : "Записаться на бесплатную консультацию"}
                 </button>
+
+                {sendError && (
+                  <p className="text-center text-red-400 text-sm">{sendError}</p>
+                )}
 
                 <p className="text-center text-gray-600 text-xs">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
               </form>
