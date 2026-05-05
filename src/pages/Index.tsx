@@ -382,7 +382,7 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             {[
               { icon: "Phone", label: "+7 (812) 987-63-45" },
-              { icon: "Mail", label: "info@d-service.ru" },
+              { icon: "Mail", label: "d-service.spb@mail.ru" },
               { icon: "MapPin", label: "Санкт-Петербург" },
             ].map((c) => (
               <div key={c.label} className="flex items-center gap-3 glass-card rounded-xl px-5 py-4">
