@@ -238,7 +238,7 @@ export default function Index() {
 
             <div className="grid grid-cols-2 gap-4 opacity-0-init reveal">
               {[
-                { icon: "MapPin", title: "Москва и МО", desc: "Работаем по всей Московской области" },
+                { icon: "MapPin", title: "Санкт-Петербург", desc: "Работаем по всему Санкт-Петербургу и ЛО" },
                 { icon: "Clock", title: "8 лет опыта", desc: "Более 200 довольных клиентов" },
                 { icon: "CheckCircle", title: "Лицензии", desc: "Все необходимые сертификаты и допуски" },
                 { icon: "Star", title: "Топ-рейтинг", desc: "4.9/5 на платформах отзывов" },
@@ -381,9 +381,9 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             {[
-              { icon: "Phone", label: "+7 (495) 000-00-00" },
+              { icon: "Phone", label: "+7 (812) 987-63-45" },
               { icon: "Mail", label: "info@d-service.ru" },
-              { icon: "MapPin", label: "Москва, ул. Примерная, 1" },
+              { icon: "MapPin", label: "Санкт-Петербург" },
             ].map((c) => (
               <div key={c.label} className="flex items-center gap-3 glass-card rounded-xl px-5 py-4">
                 <Icon name={c.icon} size={18} className="text-[var(--neon-cyan)] shrink-0" />
