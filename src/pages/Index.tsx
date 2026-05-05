@@ -478,7 +478,7 @@ export default function Index() {
           <div className="flex items-center">
             <LogoShimmer size="footer" />
           </div>
-          <p className="text-gray-600 text-sm">© 2025 D-Service IT technology. Все права защищены.</p>
+          <p className="text-gray-600 text-sm">© 2026 D-Service IT technology. Все права защищены.</p>
           <div className="flex items-center gap-6">
             {[["Услуги", "services"], ["О нас", "about"], ["Контакты", "contact"]].map(([l, id]) => (
               <button key={id} onClick={() => scrollTo(id)} className="text-gray-600 hover:text-[var(--neon-cyan)] text-sm transition-colors uppercase tracking-wider">
