@@ -128,7 +128,7 @@ export default function Index() {
       {/* HERO */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden grid-bg" id="hero">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_IMAGE} alt="TechVision" className="w-full h-full object-cover opacity-20" />
+          <img src={HERO_IMAGE} alt="D-Service IT technology" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(6,13,26,0.97) 0%, rgba(6,13,26,0.7) 50%, rgba(6,13,26,0.95) 100%)" }} />
         </div>
 
@@ -225,7 +225,7 @@ export default function Index() {
               </div>
               <h2 className="section-title text-4xl md:text-5xl text-white mb-6">Мы — ваш <span className="gradient-text">надёжный</span> IT-партнёр</h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                TechVision — команда сертифицированных IT-специалистов с более чем 8-летним опытом. Мы помогаем бизнесу строить надёжную технологическую основу: от кабельной разводки до облачной инфраструктуры.
+                D-Service IT technology — команда сертифицированных IT-специалистов с более чем 8-летним опытом. Мы помогаем бизнесу строить надёжную технологическую основу: от кабельной разводки до облачной инфраструктуры.
               </p>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
                 Специализируемся на системах видеонаблюдения для коммерческих объектов, IT-аутсорсинге и комплексной интеграции решений под ключ.
@@ -382,7 +382,7 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             {[
               { icon: "Phone", label: "+7 (495) 000-00-00" },
-              { icon: "Mail", label: "info@techvision.ru" },
+              { icon: "Mail", label: "info@d-service.ru" },
               { icon: "MapPin", label: "Москва, ул. Примерная, 1" },
             ].map((c) => (
               <div key={c.label} className="flex items-center gap-3 glass-card rounded-xl px-5 py-4">
@@ -400,7 +400,7 @@ export default function Index() {
           <div className="flex items-center">
             <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/ae86bea9-335b-4c7c-893e-f097b5cb6f28.png" alt="D-Service" className="h-8 w-auto opacity-70" />
           </div>
-          <p className="text-gray-600 text-sm">© 2024 TechVision. Все права защищены.</p>
+          <p className="text-gray-600 text-sm">© 2025 D-Service IT technology. Все права защищены.</p>
           <div className="flex items-center gap-6">
             {[["Услуги", "services"], ["О нас", "about"], ["Контакты", "contact"]].map(([l, id]) => (
               <button key={id} onClick={() => scrollTo(id)} className="text-gray-600 hover:text-[var(--neon-cyan)] text-sm transition-colors uppercase tracking-wider">
