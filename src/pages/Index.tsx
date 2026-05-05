@@ -95,7 +95,7 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: "rgba(6, 13, 26, 0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(0,212,255,0.1)" }}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/053eb7f4-5b3a-46a7-8e4a-77612fdfda5f.png" alt="D-Service" className="h-10 w-auto" />
+            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/b418b1ed-0649-436c-bc3e-2145cdee9057.png" alt="D-Service" className="h-10 w-auto" style={{ filter: "brightness(0) invert(1)" }} />
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -398,7 +398,7 @@ export default function Index() {
       <footer className="py-8 px-6" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center">
-            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/053eb7f4-5b3a-46a7-8e4a-77612fdfda5f.png" alt="D-Service" className="h-8 w-auto opacity-60" />
+            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/b418b1ed-0649-436c-bc3e-2145cdee9057.png" alt="D-Service" className="h-8 w-auto opacity-50" style={{ filter: "brightness(0) invert(1)" }} />
           </div>
           <p className="text-gray-600 text-sm">© 2024 TechVision. Все права защищены.</p>
           <div className="flex items-center gap-6">
