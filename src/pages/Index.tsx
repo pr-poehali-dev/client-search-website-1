@@ -44,7 +44,7 @@ const services = [
 
 const stats = [
   { value: "200+", label: "Клиентов" },
-  { value: "8 лет", label: "На рынке" },
+  { value: "с 2012", label: "На рынке" },
   { value: "500+", label: "Проектов" },
   { value: "24/7", label: "Поддержка" },
 ];
@@ -244,7 +244,7 @@ export default function Index() {
               </div>
               <h2 className="section-title text-4xl md:text-5xl text-white mb-6">Мы — ваш <span className="gradient-text">надёжный</span> IT-партнёр</h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                D-Service IT technology — команда сертифицированных IT-специалистов с более чем 8-летним опытом. Мы помогаем бизнесу строить надёжную технологическую основу: от кабельной разводки до облачной инфраструктуры.
+                D-Service IT technology — команда сертифицированных IT-специалистов, работающих с 2012 года. Мы помогаем бизнесу строить надёжную технологическую основу: от кабельной разводки до облачной инфраструктуры.
               </p>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
                 Специализируемся на системах видеонаблюдения для коммерческих объектов, IT-аутсорсинге и комплексной интеграции решений под ключ.
@@ -258,7 +258,7 @@ export default function Index() {
             <div className="grid grid-cols-2 gap-4 opacity-0-init reveal">
               {[
                 { icon: "MapPin", title: "Санкт-Петербург", desc: "Работаем по всему Санкт-Петербургу и ЛО" },
-                { icon: "Clock", title: "8 лет опыта", desc: "Более 200 довольных клиентов" },
+                { icon: "Clock", title: "Работаем с 2012", desc: "Более 200 довольных клиентов" },
                 { icon: "CheckCircle", title: "Лицензии", desc: "Все необходимые сертификаты и допуски" },
                 { icon: "Star", title: "Топ-рейтинг", desc: "4.9/5 на платформах отзывов" },
               ].map((item) => (
