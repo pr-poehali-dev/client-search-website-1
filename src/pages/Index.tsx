@@ -476,7 +476,9 @@ export default function Index() {
       <footer className="py-8 px-6" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center">
-            <LogoShimmer size="footer" />
+            <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="cursor-pointer" aria-label="Наверх">
+              <LogoShimmer size="footer" />
+            </button>
           </div>
           <p className="text-gray-600 text-sm">© 2026 D-Service IT technology. Все права защищены.</p>
           <div className="flex items-center gap-6">
