@@ -56,6 +56,54 @@ const reasons = [
   { icon: "TrendingUp", title: "Масштабируемость", desc: "Системы растут вместе с вашим бизнесом" },
 ];
 
+function LogoShimmer({ size }: { size: "nav" | "footer" }) {
+  const h = size === "nav" ? 40 : 28;
+  const id = `shimmer-${size}`;
+  return (
+    <svg height={h} viewBox="0 0 287 67" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: "visible" }}>
+      <defs>
+        <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#00d4ff">
+            <animate attributeName="offset" values="-1;0;1" dur="2.5s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="30%" stopColor="#4db8ff">
+            <animate attributeName="offset" values="-0.7;0.3;1.3" dur="2.5s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="60%" stopColor="#ffffff">
+            <animate attributeName="offset" values="-0.4;0.6;1.6" dur="2.5s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="85%" stopColor="#4db8ff">
+            <animate attributeName="offset" values="-0.1;0.85;1.85" dur="2.5s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stopColor="#0066ff">
+            <animate attributeName="offset" values="0;1;2" dur="2.5s" repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+        <filter id={`glow-${size}`}>
+          <feGaussianBlur stdDeviation="1.5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+      {/* Building icon */}
+      <g filter={`url(#glow-${size})`} fill={`url(#${id})`}>
+        <polygon points="8,54 8,28 28,14 48,28 48,54" />
+        <polygon points="4,54 4,32 8,29 8,54" opacity="0.6" />
+        <rect x="8" y="34" width="40" height="3" opacity="0.4" />
+        <rect x="8" y="42" width="40" height="3" opacity="0.4" />
+        <polygon points="12,14 28,4 44,14 28,10" opacity="0.8" />
+      </g>
+      {/* IT-technology text */}
+      <text x="58" y="26" fontFamily="Oswald, sans-serif" fontSize="13" fontWeight="500" letterSpacing="1" fill={`url(#${id})`} filter={`url(#glow-${size})`}>
+        IT-technology
+      </text>
+      {/* D-Service text */}
+      <text x="56" y="56" fontFamily="Oswald, sans-serif" fontSize="32" fontWeight="700" letterSpacing="1" fill={`url(#${id})`} filter={`url(#glow-${size})`}>
+        D-Service
+      </text>
+    </svg>
+  );
+}
+
 export default function Index() {
   const [formData, setFormData] = useState({ name: "", phone: "", service: "", comment: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -114,7 +162,7 @@ export default function Index() {
       <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: "rgba(6, 13, 26, 0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(0,212,255,0.1)" }}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/ae86bea9-335b-4c7c-893e-f097b5cb6f28.png" alt="D-Service" className="h-10 w-auto" />
+            <LogoShimmer size="nav" />
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -428,7 +476,7 @@ export default function Index() {
       <footer className="py-8 px-6" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center">
-            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/ae86bea9-335b-4c7c-893e-f097b5cb6f28.png" alt="D-Service" className="h-8 w-auto opacity-70" />
+            <LogoShimmer size="footer" />
           </div>
           <p className="text-gray-600 text-sm">© 2025 D-Service IT technology. Все права защищены.</p>
           <div className="flex items-center gap-6">
