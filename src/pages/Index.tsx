@@ -381,14 +381,21 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             {[
-              { icon: "Phone", label: "+7 (812) 987-63-45" },
-              { icon: "Mail", label: "d-service.spb@mail.ru" },
-              { icon: "MapPin", label: "Санкт-Петербург" },
+              { icon: "Phone", label: "+7 (812) 987-63-45", href: "tel:+78129876345" },
+              { icon: "Mail", label: "d-service.spb@mail.ru", href: "mailto:d-service.spb@mail.ru" },
+              { icon: "MapPin", label: "Санкт-Петербург", href: null },
             ].map((c) => (
-              <div key={c.label} className="flex items-center gap-3 glass-card rounded-xl px-5 py-4">
-                <Icon name={c.icon} size={18} className="text-[var(--neon-cyan)] shrink-0" />
-                <span className="text-gray-300 text-sm">{c.label}</span>
-              </div>
+              c.href ? (
+                <a key={c.label} href={c.href} className="flex items-center gap-3 glass-card rounded-xl px-5 py-4 hover:border-[var(--neon-cyan)] transition-colors">
+                  <Icon name={c.icon} size={18} className="text-[var(--neon-cyan)] shrink-0" />
+                  <span className="text-gray-300 text-sm">{c.label}</span>
+                </a>
+              ) : (
+                <div key={c.label} className="flex items-center gap-3 glass-card rounded-xl px-5 py-4">
+                  <Icon name={c.icon} size={18} className="text-[var(--neon-cyan)] shrink-0" />
+                  <span className="text-gray-300 text-sm">{c.label}</span>
+                </div>
+              )
             ))}
           </div>
         </div>
