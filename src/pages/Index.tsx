@@ -94,11 +94,8 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50" style={{ background: "rgba(6, 13, 26, 0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid rgba(0,212,255,0.1)" }}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-blue))" }}>
-              <Icon name="Cpu" size={18} className="text-[#060d1a]" />
-            </div>
-            <span className="font-oswald font-bold text-xl tracking-widest neon-text">TECH<span className="text-white">VISION</span></span>
+          <div className="flex items-center">
+            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/b07874f1-d712-4bed-9a66-633d96fdb7a0.jpg" alt="D-Service" className="h-10 w-auto" />
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -400,11 +397,8 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="py-8 px-6" style={{ borderTop: "1px solid rgba(0,212,255,0.1)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded flex items-center justify-center" style={{ background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-blue))" }}>
-              <Icon name="Cpu" size={14} className="text-[#060d1a]" />
-            </div>
-            <span className="font-oswald font-bold text-lg tracking-widest neon-text">TECH<span className="text-white">VISION</span></span>
+          <div className="flex items-center">
+            <img src="https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/bucket/b07874f1-d712-4bed-9a66-633d96fdb7a0.jpg" alt="D-Service" className="h-8 w-auto opacity-60" />
           </div>
           <p className="text-gray-600 text-sm">© 2024 TechVision. Все права защищены.</p>
           <div className="flex items-center gap-6">
