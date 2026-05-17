@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
+import NewsGrid from "@/components/NewsGrid";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/files/57b5b856-988b-44b2-988c-2df8f54fbe02.jpg";
 
@@ -480,66 +481,7 @@ export default function Index() {
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Новости IT-сферы <span style={{ color: "var(--neon-cyan)" }}>2026</span></h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">Актуальные события и тренды в мире технологий, кибербезопасности и цифровой трансформации.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                date: "Май 2026",
-                tag: "ИИ",
-                title: "GPT-5 и конкуренты: ИИ-модели достигли человеческого уровня в профессиональных задачах",
-                desc: "Ведущие ИИ-лаборатории — OpenAI, Google DeepMind и Anthropic — представили модели, превосходящие экспертов в медицине, праве и инженерии. Компании по всему миру ускоряют внедрение ИИ-агентов в бизнес-процессы.",
-                icon: "Brain",
-              },
-              {
-                date: "Апрель 2026",
-                tag: "Кибербезопасность",
-                title: "Волна атак на промышленные объекты: под угрозой системы АСУ ТП по всей Европе",
-                desc: "Международные группировки киберпреступников усилили атаки на критическую инфраструктуру. Эксперты призывают бизнес срочно обновить системы защиты и провести аудит уязвимостей.",
-                icon: "Shield",
-              },
-              {
-                date: "Апрель 2026",
-                tag: "Облако",
-                title: "Рынок облачных вычислений превысил $1 трлн: лидируют Microsoft Azure и AWS",
-                desc: "По данным Gartner, мировые расходы на облачные сервисы впервые пробили триллионный порог. Российские компании активно переходят на отечественные облачные платформы — Yandex Cloud и SberCloud.",
-                icon: "Cloud",
-              },
-              {
-                date: "Март 2026",
-                tag: "Видеонаблюдение",
-                title: "Видеоналитика с ИИ: системы распознавания эмоций внедряются в ритейл и офисы",
-                desc: "Интеллектуальные CCTV-системы нового поколения анализируют поведение посетителей в реальном времени. Технологии помогают оптимизировать выкладку товаров и повышать безопасность объектов.",
-                icon: "Camera",
-              },
-              {
-                date: "Февраль 2026",
-                tag: "Сети",
-                title: "5G-покрытие охватило 80% городов России: бизнес получает доступ к сверхбыстрой связи",
-                desc: "«Ростелеком» и МТС завершили масштабное развёртывание 5G-сетей в крупных городах. Технология открывает новые возможности для IoT, удалённого управления оборудованием и видеонаблюдения.",
-                icon: "Wifi",
-              },
-              {
-                date: "Январь 2026",
-                tag: "Импортозамещение",
-                title: "Российский рынок ПО вырос на 35%: отечественные решения вытесняют зарубежные продукты",
-                desc: "Переход на российское ПО ускорился: госсектор и крупный бизнес полностью мигрировали на отечественные ERP, CRM и инфраструктурные решения. Спрос на IT-интеграторов достиг рекордных значений.",
-                icon: "Monitor",
-              },
-            ].map((news, i) => (
-              <div key={i} className="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1" style={{ background: "rgba(0,212,255,0.04)", border: "1px solid rgba(0,212,255,0.12)" }}>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: "rgba(0,212,255,0.12)", color: "var(--neon-cyan)" }}>{news.tag}</span>
-                  <span className="text-xs text-gray-500">{news.date}</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 shrink-0 w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(0,212,255,0.1)" }}>
-                    <Icon name={news.icon} size={18} style={{ color: "var(--neon-cyan)" }} />
-                  </div>
-                  <h3 className="text-white font-bold text-base leading-snug">{news.title}</h3>
-                </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{news.desc}</p>
-              </div>
-            ))}
-          </div>
+          <NewsGrid />
         </div>
       </section>
 
