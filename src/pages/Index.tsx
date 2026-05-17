@@ -190,7 +190,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: "var(--neon-cyan)" }}>IT-дайджест</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Новости IT-сферы <span style={{ color: "var(--neon-cyan)" }}>2026</span></h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Новости IT-сферы</h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">Актуальные события и тренды в мире технологий, кибербезопасности и цифровой трансформации.</p>
           </div>
           <NewsGrid />
