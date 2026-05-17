@@ -20,6 +20,7 @@ const contacts = [
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", phone: "", service: "", comment: "" });
+  const [pdnConsent, setPdnConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState("");
@@ -124,16 +125,26 @@ export default function ContactSection() {
                 />
               </div>
 
-              <button type="submit" disabled={sending} className="neon-btn w-full py-4 rounded-xl text-base font-bold tracking-widest uppercase flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
+              <button type="submit" disabled={sending || !pdnConsent} className="neon-btn w-full py-4 rounded-xl text-base font-bold tracking-widest uppercase flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
                 <Icon name={sending ? "Loader" : "Send"} size={18} className={sending ? "animate-spin" : ""} />
                 {sending ? "Отправляем..." : "Записаться на бесплатную консультацию"}
               </button>
 
+              <label className="flex items-center gap-3 cursor-pointer select-none group">
+                <input
+                  type="checkbox"
+                  checked={pdnConsent}
+                  onChange={e => setPdnConsent(e.target.checked)}
+                  className="w-4 h-4 rounded cursor-pointer accent-[var(--neon-cyan)]"
+                />
+                <span className="text-gray-500 text-xs group-hover:text-gray-400 transition-colors">
+                  Согласие на обработку персональных данных
+                </span>
+              </label>
+
               {sendError && (
                 <p className="text-center text-red-400 text-sm">{sendError}</p>
               )}
-
-              <p className="text-center text-gray-600 text-xs">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
             </form>
           ) : (
             <div className="text-center py-8 animate-fade-in">

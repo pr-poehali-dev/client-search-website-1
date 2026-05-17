@@ -5,6 +5,7 @@ const SUBSCRIBE_URL = "https://functions.poehali.dev/ef590e11-20ec-445c-9eb9-ec2
 
 export default function NewsSubscribe() {
   const [email, setEmail] = useState("");
+  const [pdnConsent, setPdnConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "duplicate" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,27 +43,39 @@ export default function NewsSubscribe() {
           Вы подписаны! Спасибо.
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <input
-            type="email"
-            required
-            placeholder="your@email.com"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            className="flex-1 px-4 py-3 rounded-xl text-white text-sm outline-none focus:ring-2"
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(0,212,255,0.2)",
-              focusRingColor: "var(--neon-cyan)",
-            }}
-          />
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="neon-btn px-6 py-3 rounded-xl text-sm font-bold tracking-wider uppercase whitespace-nowrap"
-          >
-            {status === "loading" ? "..." : "Подписаться"}
-          </button>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              required
+              placeholder="your@email.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className="flex-1 px-4 py-3 rounded-xl text-white text-sm outline-none focus:ring-2"
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(0,212,255,0.2)",
+              }}
+            />
+            <button
+              type="submit"
+              disabled={status === "loading" || !pdnConsent}
+              className="neon-btn px-6 py-3 rounded-xl text-sm font-bold tracking-wider uppercase whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {status === "loading" ? "..." : "Подписаться"}
+            </button>
+          </div>
+          <label className="flex items-center gap-3 cursor-pointer select-none group justify-center">
+            <input
+              type="checkbox"
+              checked={pdnConsent}
+              onChange={e => setPdnConsent(e.target.checked)}
+              className="w-4 h-4 rounded cursor-pointer accent-[var(--neon-cyan)]"
+            />
+            <span className="text-gray-500 text-xs group-hover:text-gray-400 transition-colors">
+              Согласие на обработку персональных данных
+            </span>
+          </label>
         </form>
       )}
 
