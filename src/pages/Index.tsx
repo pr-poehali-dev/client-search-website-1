@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import NewsGrid from "@/components/NewsGrid";
+import NewsSubscribe from "@/components/NewsSubscribe";
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/f81d60f1-bda8-46ed-ba4a-93dc124098f6/files/57b5b856-988b-44b2-988c-2df8f54fbe02.jpg";
 
@@ -482,6 +483,7 @@ export default function Index() {
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">Актуальные события и тренды в мире технологий, кибербезопасности и цифровой трансформации.</p>
           </div>
           <NewsGrid />
+          <NewsSubscribe />
         </div>
       </section>
 
